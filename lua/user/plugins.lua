@@ -103,6 +103,7 @@ return packer.startup(function(use)
   use "lewis6991/gitsigns.nvim"
   use "vimwiki/vimwiki"
   use "tools-life/taskwiki"
+  use {'iamcco/markdown-preview.nvim', run = 'cd app && yarn install', cmd = 'MarkdownPreview'}
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
