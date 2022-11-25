@@ -81,8 +81,10 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-cmdline" -- cmdline completions
   use "saadparwaiz1/cmp_luasnip" -- snippet completions
   use "hrsh7th/cmp-nvim-lsp"
+  use "simrat39/symbols-outline.nvim"
   use "hrsh7th/cmp-nvim-lua"
   use "tpope/vim-fugitive"
+  use "kdheepak/lazygit.nvim"
 
   -- snippets
   use "L3MON4D3/LuaSnip" --snippet engine
@@ -108,7 +110,10 @@ return packer.startup(function(use)
   use "lewis6991/gitsigns.nvim"
   use "vimwiki/vimwiki"
   use "tools-life/taskwiki"
-  use {'iamcco/markdown-preview.nvim', run = 'cd app && yarn install', cmd = 'MarkdownPreview'}
+  use({
+    "iamcco/markdown-preview.nvim",
+    run = function() vim.fn["mkdp#util#install"]() end,
+  })
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
